@@ -1,0 +1,14 @@
+package uam.org.servicio;
+
+import uam.org.models.Estudiante;
+
+public class ClaseBecaA implements InterfaceEstrategiaBeca {
+
+    @Override
+    public Double calcularBeca(Estudiante estudiante) {
+        if  (estudiante.getPromedio() >= 90) {
+            return 0.5;
+        }
+        return 0.0;
+    }
+}
