@@ -1,6 +1,7 @@
 package uam.org.test;
 
 import uam.org.models.Estudiante;
+import uam.org.models.EstudianteBecado;
 import uam.org.servicio.ClaseBecaA;
 import uam.org.servicio.ClaseBecaB;
 import uam.org.servicio.ServicioEstudiante;
@@ -10,7 +11,11 @@ import java.sql.SQLOutput;
 
 public class Main {
     public static void main(String[] args) {
-        Estudiante estudiante = new Estudiante("25010330", "Erving", "Miranda",
+        Estudiante estudiante = new EstudianteBecado("25010330", "Erving", "Miranda",
+                "ervingmr@uamv.edu.ni", 90.00);
+        Double beca = estudiante.calcularBeca();
+        System.out.println("Beca: " + beca);
+        /*Estudiante estudiante = new Estudiante("25010330", "Erving", "Miranda",
                 "ervingmr@uamv.edu.ni", 90.00);
         ServicioEstudianteDB.insertarEstudiante(estudiante);
         Estudiante estudiante1 = new Estudiante("0012106081009F", "Juan", "Garcia",
@@ -18,6 +23,8 @@ public class Main {
         ServicioEstudianteDB.insertarEstudiante(estudiante1);
         ServicioEstudianteDB.listarEstudiantes();
         calcularBeca(estudiante);
+        EstudianteBecado becado = (EstudianteBecado) new  Estudiante();
+        becado.calcularBeca();*/
     }
 
     public static void calcularBeca(Estudiante estudiante) {

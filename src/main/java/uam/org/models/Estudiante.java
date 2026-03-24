@@ -2,12 +2,12 @@ package uam.org.models;
 
 import java.util.Objects;
 
-public class Estudiante {
+public abstract class Estudiante {
     private String cif;
     private String nombre;
     private String apellido;
     private String correo;
-    private Double promedio;
+    protected Double promedio;
 
     public Estudiante(String cif, String nombre, String apellido, String correo, Double promedio) {
         this.cif = cif;
@@ -18,6 +18,10 @@ public class Estudiante {
     }
 
     public Estudiante(){}
+
+    public Estudiante(Double promedio) {
+        this.promedio = promedio;
+    }
 
     public String getCif() {
         return cif;
@@ -75,4 +79,7 @@ public class Estudiante {
         if (!(o instanceof Estudiante that)) return false;
         return Objects.equals(cif, that.cif);
     }
+
+    public abstract Double calcularBeca();
 }
+
