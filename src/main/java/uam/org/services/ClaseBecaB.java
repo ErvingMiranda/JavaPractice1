@@ -1,4 +1,4 @@
-package uam.org.servicio;
+package uam.org.services;
 import uam.org.models.Estudiante;
 public class ClaseBecaB implements InterfaceEstrategiaBeca {
     @Override

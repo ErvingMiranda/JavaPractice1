@@ -2,12 +2,9 @@ package uam.org.test;
 
 import uam.org.models.Estudiante;
 import uam.org.models.EstudianteBecado;
-import uam.org.servicio.ClaseBecaA;
-import uam.org.servicio.ClaseBecaB;
-import uam.org.servicio.ServicioEstudiante;
-import uam.org.servicio.ServicioEstudianteDB;
-
-import java.sql.SQLOutput;
+import uam.org.services.ClaseBecaA;
+import uam.org.services.ClaseBecaB;
+import uam.org.services.ServicioEstudiante;
 
 public class Main {
     public static void main(String[] args) {

@@ -1,10 +1,32 @@
-package uam.org.servicio;
+package uam.org.services;
 
 import uam.org.config.Global;
 import uam.org.models.Estudiante;
 
-public class ServicioEstudianteDB {
-    public static Estudiante insertarEstudiante(Estudiante estudiante){
+public class ServicioEstudianteDB implements IEstudianteServiceDB{
+    @Override
+    public Estudiante insertarEstudiante(Estudiante e) {
+        Global.listaEstudiantes.add(e);
+        return e;
+    }
+
+    @Override
+    public void eliminarEstudiante(Estudiante e) {
+        Global.listaEstudiantes.remove(e);
+    }
+
+    @Override
+    public Estudiante obtenerEstudiante(Estudiante e) {
+        return Global.listaEstudiantes.stream().filter(x -> x.getCif().equals(x.getCif()))
+                .findFirst().orElse(null);
+    }
+
+    @Override
+    public Estudiante updateEstudiante(Estudiante estudiante) {
+        return null;
+    }
+
+    /*public static Estudiante insertarEstudiante(Estudiante estudiante){
         Global.listaEstudiantes.add(estudiante);
         return estudiante;
     }
@@ -25,9 +47,11 @@ public class ServicioEstudianteDB {
                 estudiante1.setCorreo(estudiante.getCorreo());
             }
         }
-    }
 
-    public static void removeEstudiante(Estudiante estudiante){
+     public static void removeEstudiante(Estudiante estudiante){
         Global.listaEstudiantes.remove(estudiante);
-    }
+            }
+        }*/
+
 }
+
